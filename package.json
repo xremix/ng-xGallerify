@@ -7,7 +7,9 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "pack": "cd dist/x-gallerify && npm pack",
+    "publish": "cd dist/x-gallerify && npm publish"
   },
   "private": true,
   "dependencies": {
