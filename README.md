@@ -2,13 +2,23 @@
 
 A lightweight, responsive, amazing looking photo gallery, based on [Angular](https://angular.io/)
 
-- Responsive
+- Responsive *wip*
 - Simple to use
 - Lightweight
 - Customizable
 - Based on Flexbox
 - Works with Angular
 - [jQuery](https://github.com/xremix/xGallerify) (Original Project) and [AngularJS](https://github.com/JohnnyTheTank/angular-xGallerify) version available
+
+
+## ToDo´s
+
+Here is a list of features you will see in the future. If you have any suggestions, please open up an issue.
+
+- [ ] Support modes for different row sizes based on the screen size
+- [ ] Have a bootstrap mode
+- [ ] Have option to pass in own modes
+- [ ] Improve default styling
 
 ## Demo
 
@@ -120,5 +130,26 @@ and your `my.component.html` like this
 <ng-template #imageTemplate let-image="image">
   <img class="xgallerify-img" src="{{image.src}}" (load)="xgallery.imageLoaded($event, image)" (click)="clickImage(image)">
 </ng-template>
-
 ```
+
+## Parameters
+
+*This is still work in progress*
+
+You can pass the following parameter to a gallery:
+
+- maxImagesPerRow
+- images
+- imageTemplate
+
+
+
+## Community
+
+- xGallerify jQuery directive: [xremix/xGallerify](https://github.com/xremix/xGallerify)
+- xGallerify AngularJS directive: [JohnnyTheTank/angular-xGallerify](https://github.com/JohnnyTheTank/angular-xGallerify)
+
+Thanks everyone for contributing. Suggestions are always welcome.  
+Also I'm happy to hear in which projects you've used the library.
+
+![Analytics](https://ga-beacon.appspot.com/UA-40522413-9/ng-xGallerify/readme?pixel)
