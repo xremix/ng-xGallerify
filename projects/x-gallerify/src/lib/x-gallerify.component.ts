@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, TemplateRef } from '@angular/core';
+import { GalleryImage } from './models/gallery-image';
 
 @Component({
   selector: 'ui-xGallerify',
@@ -8,10 +9,10 @@ import { Component, OnInit, Input, TemplateRef } from '@angular/core';
 })
 export class XGallerifyComponent implements OnInit {
   @Input() public maxImagesPerRow: number = 4;
-  @Input() public images: Array<any> = [];
-  @Input() public imageTemplate: TemplateRef<any>;
+  @Input() public images: Array<GalleryImage> = [];
+  @Input() public imageTemplate: TemplateRef<GalleryImage>;
 
-  public rows: Array<Array<any>> = [];
+  public rows: Array<Array<GalleryImage>> = [];
 
   ngOnInit(): void {
     this.rows = this.chunkArray(this.images, this.maxImagesPerRow);
@@ -30,8 +31,7 @@ export class XGallerifyComponent implements OnInit {
     return tempArray;
   }
 
-  imageLoaded(event: any, image: any) {
-    console.log(event);
+  public imageLoaded(event: any, image: GalleryImage) {
     var htmlImageElement = event.path[0];
     image.width = htmlImageElement.width;
     image.height = htmlImageElement.height;
