@@ -76,3 +76,49 @@ Your `my.component.html` should look like this:
 ```
 <ui-xGallerify [images]="images"></ui-xGallerify>
 ```
+
+### Advanced usage
+
+
+#### Custom Template / Design
+
+To make use of your own design you can have your own template
+
+```
+<ui-xGallerify [images]="images" [imageTemplate]="imageTemplate" #xgallery></ui-xGallerify>
+
+
+<ng-template #imageTemplate let-image="image">
+  <img class="xgallerify-img" src="{{image.src}}" (load)="xgallery.imageLoaded($event, image)">
+  <div style="position: absolute; background: rgba(0,0,0,0.5); left: 0px; right: 0px; bottom: 0px; height: 20px;">
+  You can place some title here
+  </div>
+</ng-template>
+
+```
+
+#### Click events
+
+If you want to trigger a click event, once an image gets clicked, you can make use of the templates as well.
+
+Your `my.component.ts` would look like this
+
+```
+    import { GalleryImage } from 'xgallerify';
+    export class AppComponent {
+        public clickImage(image: Image){
+            alert(image.src);
+        }
+    }
+```
+
+and your `my.component.html` like this
+
+```
+<ui-xGallerify [images]="images" [imageTemplate]="imageTemplate" #xgallery></ui-xGallerify>
+
+<ng-template #imageTemplate let-image="image">
+  <img class="xgallerify-img" src="{{image.src}}" (load)="xgallery.imageLoaded($event, image)" (click)="clickImage(image)">
+</ng-template>
+
+```
