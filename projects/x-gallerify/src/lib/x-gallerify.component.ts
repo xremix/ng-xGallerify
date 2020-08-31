@@ -1,21 +1,63 @@
-import { Component, OnInit, Input, TemplateRef } from '@angular/core';
+import { Component, OnInit, Input, TemplateRef, HostListener } from '@angular/core';
 import { GalleryImage } from './models/gallery-image';
+import { BreakPoint } from './models/breakpoint';
 
 @Component({
   selector: 'ui-xGallerify',
-
   templateUrl: './x-gallerify.component.html',
   styleUrls: ['./x-gallerify.component.scss']
 })
 export class XGallerifyComponent implements OnInit {
-  @Input() public maxImagesPerRow: number = 4;
+  // Input Parameter
   @Input() public images: Array<GalleryImage> = [];
   @Input() public imageTemplate: TemplateRef<GalleryImage>;
+  @Input()
+  public breakPoints: Array<BreakPoint> = [{
+    min: 0,
+    max: 768,
+    rows: 1
+  },{
+    min: 768,
+    max: 992,
+    rows: 2
+  },{
+    min: 992,
+    max: 1200,
+    rows: 3
+  },{
+    min: 1200,
+    max: 999999,
+    rows: 4
+  }];
 
+  // Internal Parameter
   public rows: Array<Array<GalleryImage>> = [];
+  private currentGrid = null;
 
   ngOnInit(): void {
-    this.rows = this.chunkArray(this.images, this.maxImagesPerRow);
+    this.updateRows();
+  }
+
+  updateRows(){
+    this.currentGrid = this.getCurrentGrid();
+    this.rows = this.chunkArray(this.images, this.currentGrid.rows);
+  }
+
+  getCurrentGrid():any{
+    let width = window.innerWidth;
+    for (let i = 0; i < this.breakPoints.length; i++) {
+      if(this.breakPoints[i].min < width && this.breakPoints[i].max >= width){
+        return this.breakPoints[i];
+      }
+    }
+  }
+  
+  @HostListener('window:resize', ['$event'])
+  onResize(event){
+    if(this.getCurrentGrid().rows != this.currentGrid.rows){
+      console.log("we got a change")
+      this.updateRows();
+    }    
   }
 
   private chunkArray(myArray, chunk_size) {

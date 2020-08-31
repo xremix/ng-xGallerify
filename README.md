@@ -20,6 +20,7 @@ Here is a list of features you will see in the future. If you have any suggestio
 - [ ] Have option to pass in own modes
 - [ ] Improve default styling
 - [ ] Get image loaded events out of the templates
+- [ ] Have default themes, next to the plain one
 
 ## Demo
 
@@ -139,7 +140,7 @@ and your `my.component.html` like this
 
 You can pass the following parameter to a gallery:
 
-- maxImagesPerRow
+- breakPoints
 - images
 - imageTemplate
 
@@ -153,4 +154,4 @@ You can pass the following parameter to a gallery:
 Thanks everyone for contributing. Suggestions are always welcome.  
 Also I'm happy to hear in which projects you've used the library.
 
-![Analytics](https://ga-beacon.appspot.com/UA-40522413-9/ng-xGallerify/readme?pixel)
+[![Analytics](https://ga-beacon.appspot.com/UA-40522413-9/welcome-page)](https://github.com/xremix/ng-xGallerify)

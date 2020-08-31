@@ -1,6 +1,6 @@
 <div *ngFor="let row of rows">
   <div class="img-group">
-    <div *ngFor="let image of row" [style.flex]="image.ratio" [style.visibility]="!image.ratio ? 'hidden' : 'visible'" style="position:relative;">
+    <div *ngFor="let image of row" [style.flex]="row.length == 1 ? 1 : image.ratio" [style.visibility]="!image.ratio ? 'hidden' : 'visible'" style="position:relative;">
       <ng-container *ngTemplateOutlet="imageTemplate || defaultImageTemplate; context:{image: image}">
       </ng-container>
     </div>
