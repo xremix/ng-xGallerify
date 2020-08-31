@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, TemplateRef } from '@angular/core';
 
 @Component({
   selector: 'ui-xGallerify',
@@ -9,11 +9,11 @@ import { Component, OnInit, Input } from '@angular/core';
 export class XGallerifyComponent implements OnInit {
   @Input() public maxImagesPerRow: number = 4;
   @Input() public images: Array<any> = [];
+  @Input() public imageTemplate: TemplateRef<any>;
 
   public rows: Array<Array<any>> = [];
 
   ngOnInit(): void {
-    console.log(this.maxImagesPerRow);
     this.rows = this.chunkArray(this.images, this.maxImagesPerRow);
   }
 
