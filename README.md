@@ -19,6 +19,7 @@ Here is a list of features you will see in the future. If you have any suggestio
 - [ ] Have a bootstrap mode
 - [ ] Have option to pass in own modes
 - [ ] Improve default styling
+- [ ] Get image loaded events out of the templates
 
 ## Demo
 
