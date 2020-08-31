@@ -6,3 +6,11 @@ img{
   display:flex; 
   // font-size: 0px;
 }
+
+// Public styles for usage outside of the model
+::ng-deep{
+  .xgallerify-img{
+    width:100%;
+    height:auto;
+  }
+}

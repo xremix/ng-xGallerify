@@ -1,6 +1,6 @@
 <div *ngFor="let row of rows">
   <div class="img-group">
-    <div class="img-container1" *ngFor="let image of row" [style.flex]="image.ratio">
+    <div *ngFor="let image of row" [style.flex]="image.ratio" style="position:relative;">
       <ng-container *ngTemplateOutlet="imageTemplate || defaultImageTemplate; context:{image: image}">
       </ng-container>
     </div>
@@ -9,5 +9,5 @@
 
 <!-- TODO Figure out solution how to get the loaded event out of the template -->
 <ng-template #defaultImageTemplate let-image="image">
-  <img src="{{image.src}}" (load)="imageLoaded($event, image)">
+  <img class="xgallerify-img" src="{{image.src}}" (load)="imageLoaded($event, image)">
 </ng-template>
