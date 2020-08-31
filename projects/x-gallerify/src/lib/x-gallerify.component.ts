@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'ui-xGallerify',
@@ -7,37 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./x-gallerify.component.scss']
 })
 export class XGallerifyComponent implements OnInit {
-  public maxPerRow: number = 4;
-  public images: Array<any> = [
-    {
-      src: "https://farm66.staticflickr.com/65535/49489692872_a202029a13_b.jpg",
-    },
-    {
-      src: "https://farm66.staticflickr.com/65535/49489489251_21a1775a60_b.jpg",
-    },
-    {
-      src: "https://farm66.staticflickr.com/65535/49489694752_f8d8745a85_b.jpg",
-    },
-    {
-      src: "https://farm66.staticflickr.com/65535/49488995108_5283113839_b.jpg",
-    },
-    {
-      src: "https://farm66.staticflickr.com/65535/49488995108_5283113839_b.jpg",
-    },
-    {
-      src: "https://farm66.staticflickr.com/65535/49489694752_f8d8745a85_b.jpg",
-    },
-    {
-      src: "https://farm66.staticflickr.com/65535/49488995108_5283113839_b.jpg",
-    },
-    {
-      src: "https://farm66.staticflickr.com/65535/49488995108_5283113839_b.jpg",
-    }
-  ];
+  @Input() public maxImagesPerRow: number = 4;
+  @Input() public images: Array<any> = [];
+
   public rows: Array<Array<any>> = [];
 
   ngOnInit(): void {
-    this.rows = this.chunkArray(this.images, this.maxPerRow);
+    console.log(this.maxImagesPerRow);
+    this.rows = this.chunkArray(this.images, this.maxImagesPerRow);
   }
 
   private chunkArray(myArray, chunk_size) {
