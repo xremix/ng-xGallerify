@@ -1,5 +1,7 @@
-<div class="img-group">
-  <div class="img-container1" *ngFor="let image of images" [style.flex]="image.ratio">
-    <img src="{{image.src}}"  (load)="imageLoaded($event)">
+<div *ngFor="let row of rows">
+  <div class="img-group">
+    <div class="img-container1" *ngFor="let image of row" [style.flex]="image.ratio">
+      <img src="{{image.src}}" (load)="imageLoaded($event, image)">
+    </div>
   </div>
 </div>
