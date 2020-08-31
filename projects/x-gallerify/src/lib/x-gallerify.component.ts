@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, TemplateRef, HostListener } from '@angular/core';
 import { GalleryImage } from './models/gallery-image';
 import { BreakPoint } from './models/breakpoint';
+import { GridService } from './services/grid';
 
 @Component({
   selector: 'ui-xGallerify',
@@ -11,24 +12,7 @@ export class XGallerifyComponent implements OnInit {
   // Input Parameter
   @Input() public images: Array<GalleryImage> = [];
   @Input() public imageTemplate: TemplateRef<GalleryImage>;
-  @Input()
-  public breakPoints: Array<BreakPoint> = [{
-    min: 0,
-    max: 768,
-    rows: 1
-  },{
-    min: 768,
-    max: 992,
-    rows: 2
-  },{
-    min: 992,
-    max: 1200,
-    rows: 3
-  },{
-    min: 1200,
-    max: 999999,
-    rows: 4
-  }];
+  @Input() public breakPoints: Array<BreakPoint> =  GridService.defaultGrid();
 
   // Internal Parameter
   public rows: Array<Array<GalleryImage>> = [];

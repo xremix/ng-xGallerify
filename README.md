@@ -1,11 +1,14 @@
 # ng-xGallerify
 
-A lightweight, responsive, amazing looking photo gallery, based on [Angular](https://angular.io/)
+**A lightweight, responsive, amazing looking photo gallery, based on [Angular](https://angular.io/).**
+
+The row based design is very appealing, as it highlights landscape photos and allows it to show a beautiful image grid with no waste of space.
 
 - Responsive *wip*
 - Simple to use
 - Lightweight
 - Customizable
+- Beautiful row based design
 - Based on Flexbox
 - Works with Angular
 - [jQuery](https://github.com/xremix/xGallerify) (Original Project) and [AngularJS](https://github.com/JohnnyTheTank/angular-xGallerify) version available
@@ -15,9 +18,9 @@ A lightweight, responsive, amazing looking photo gallery, based on [Angular](htt
 
 Here is a list of features you will see in the future. If you have any suggestions, please open up an issue.
 
-- [ ] Support modes for different row sizes based on the screen size
-- [ ] Have a bootstrap mode
-- [ ] Have option to pass in own modes
+- [x] Support modes for different row sizes based on the screen size
+- [x] Have a bootstrap mode
+- [x] Have option to pass in own modes
 - [ ] Improve default styling
 - [ ] Get image loaded events out of the templates
 - [ ] Have default themes, next to the plain one
