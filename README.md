@@ -1,5 +1,7 @@
 # ng-xGallerify
 
+**WARNING, the current NPM is not working - currently this needs to get cloned**
+
 **A lightweight, responsive, amazing looking photo gallery, based on [Angular](https://angular.io/).**
 
 The row based design is very appealing, as it highlights landscape photos and allows it to show a beautiful image grid with no waste of space.
