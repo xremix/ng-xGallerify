@@ -2,7 +2,7 @@
 
 **WARNING, the current NPM is not working - currently this needs to get cloned**
 
-**A lightweight, responsive, amazing looking photo gallery, based on [Angular](https://angular.io/).**
+**A lightweight, responsive, amazing looking photo gallery for [Angular](https://angular.io/).**
 
 The row based design is very appealing, as it highlights landscape photos and allows it to show a beautiful image grid with no waste of space.
 
@@ -102,16 +102,15 @@ Your `my.component.html` should look like this:
 To make use of your own design you can have your own template
 
 ```
-<ui-xGallerify [images]="images" [imageTemplate]="imageTemplate" #xgallery></ui-xGallerify>
+<ui-xGallerify [images]="images" [imageTemplate]="imageTemplate" #myGallery></ui-xGallerify>
 
 
 <ng-template #imageTemplate let-image="image">
-  <img class="xgallerify-img" src="{{image.src}}" (load)="xgallery.imageLoaded($event, image)">
+  <img class="xgallerify-img" src="{{image.src}}" (load)="myGallery.imageLoaded($event, image)">
   <div style="position: absolute; background: rgba(0,0,0,0.5); left: 0px; right: 0px; bottom: 0px; height: 20px;">
   You can place some title here
   </div>
 </ng-template>
-
 ```
 
 #### Click events
@@ -127,15 +126,15 @@ Your `my.component.ts` would look like this
             alert(image.src);
         }
     }
-```
+```
 
 and your `my.component.html` like this
 
 ```
-<ui-xGallerify [images]="images" [imageTemplate]="imageTemplate" #xgallery></ui-xGallerify>
+<ui-xGallerify [images]="images" [imageTemplate]="imageTemplate" #myGallery></ui-xGallerify>
 
 <ng-template #imageTemplate let-image="image">
-  <img class="xgallerify-img" src="{{image.src}}" (load)="xgallery.imageLoaded($event, image)" (click)="clickImage(image)">
+  <img class="xgallerify-img" src="{{image.src}}" (load)="myGallery.imageLoaded($event, image)" (click)="clickImage(image)">
 </ng-template>
 ```
 
@@ -148,7 +147,6 @@ You can pass the following parameter to a gallery:
 - breakPoints
 - images
 - imageTemplate
-
 
 
 ## Community
