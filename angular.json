@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "xGallerify": {
+    "@xremix/ng-x-gallerify": {
       "projectType": "library",
       "root": "projects/x-gallerify",
       "sourceRoot": "projects/x-gallerify/src",
@@ -43,5 +43,5 @@
         }
       }
     }},
-  "defaultProject": "xGallerify"
+  "defaultProject": "@xremix/ng-x-gallerify"
 }

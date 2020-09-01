@@ -1,6 +1,6 @@
 {
-  "name": "ng-x-gallerify",
-  "version": "0.0.0",
+  "name": "@xremix/ng-x-gallerify",
+  "version": "0.0.2",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

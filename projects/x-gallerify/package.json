@@ -1,6 +1,6 @@
 {
-  "name": "x-gallerify",
-  "version": "0.0.1",
+  "name": "@xremix/ng-x-gallerify",
+  "version": "0.0.2",
   "peerDependencies": {
     "@angular/common": "^10.0.14",
     "@angular/core": "^10.0.14"
