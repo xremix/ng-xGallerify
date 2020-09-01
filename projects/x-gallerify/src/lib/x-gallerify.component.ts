@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, TemplateRef, HostListener } from '@angular/core';
 import { GalleryImage } from './models/gallery-image';
 import { BreakPoint } from './models/breakpoint';
-import { GridService } from './services/grid';
+import { GridService } from './services/grid.service';
 
 @Component({
   selector: 'ui-xGallerify',
@@ -30,18 +30,19 @@ export class XGallerifyComponent implements OnInit {
   getCurrentGrid():any{
     let width = window.innerWidth;
     for (let i = 0; i < this.breakPoints.length; i++) {
+      console.log(this.breakPoints[i].min)
       if(this.breakPoints[i].min < width && this.breakPoints[i].max >= width){
         return this.breakPoints[i];
       }
     }
   }
-  
+
   @HostListener('window:resize', ['$event'])
   onResize(event){
     if(this.getCurrentGrid().rows != this.currentGrid.rows){
       console.log("we got a change")
       this.updateRows();
-    }    
+    }
   }
 
   private chunkArray(myArray, chunk_size) {

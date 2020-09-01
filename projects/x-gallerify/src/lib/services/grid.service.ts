@@ -19,7 +19,7 @@ export class GridService {
       rows: 2
     }, {
       min: 1200,
-      max: 1200,
+      max: 1800,
       rows: 3
     }, {
       min: 1800,
