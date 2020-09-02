@@ -1,5 +1,5 @@
 export class GalleryImage {
-    public src: string;
+    public url: string;
     public ratio: number;
     public width: number;
     public height: number;

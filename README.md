@@ -26,6 +26,7 @@ Here is a list of features you will see in the future. If you have any suggestio
 - [ ] Improve default styling
 - [ ] Get image loaded events out of the templates
 - [ ] Have default themes, next to the plain one
+- [ ] Pageing
 
 ## Demo
 
@@ -60,28 +61,28 @@ import { GalleryImage } from 'x-gallerify';
 export class AppComponent {
   public images: Array<any> = [
     {
-      src: "https://farm66.staticflickr.com/65535/49489692872_a202029a13_b.jpg",
+      url: "https://farm66.staticflickr.com/65535/49489692872_a202029a13_b.jpg",
     },
     {
-      src: "https://farm66.staticflickr.com/65535/49489489251_21a1775a60_b.jpg",
+      url: "https://farm66.staticflickr.com/65535/49489489251_21a1775a60_b.jpg",
     },
     {
-      src: "https://farm66.staticflickr.com/65535/49489694752_f8d8745a85_b.jpg",
+      url: "https://farm66.staticflickr.com/65535/49489694752_f8d8745a85_b.jpg",
     },
     {
-      src: "https://farm66.staticflickr.com/65535/49488995108_5283113839_b.jpg",
+      url: "https://farm66.staticflickr.com/65535/49488995108_5283113839_b.jpg",
     },
     {
-      src: "https://farm66.staticflickr.com/65535/49488995108_5283113839_b.jpg",
+      url: "https://farm66.staticflickr.com/65535/49488995108_5283113839_b.jpg",
     },
     {
-      src: "https://farm66.staticflickr.com/65535/49489694752_f8d8745a85_b.jpg",
+      url: "https://farm66.staticflickr.com/65535/49489694752_f8d8745a85_b.jpg",
     },
     {
-      src: "https://farm66.staticflickr.com/65535/49488995108_5283113839_b.jpg",
+      url: "https://farm66.staticflickr.com/65535/49488995108_5283113839_b.jpg",
     },
     {
-      src: "https://farm66.staticflickr.com/65535/49488995108_5283113839_b.jpg",
+      url: "https://farm66.staticflickr.com/65535/49488995108_5283113839_b.jpg",
     }
   ];
 }
@@ -106,7 +107,7 @@ To make use of your own design you can have your own template
 
 
 <ng-template #imageTemplate let-image="image">
-  <img class="xgallerify-img" src="{{image.src}}" (load)="myGallery.imageLoaded($event, image)">
+  <img class="xgallerify-img" url="{{image.url}}" (load)="myGallery.imageLoaded($event, image)">
   <div style="position: absolute; background: rgba(0,0,0,0.5); left: 0px; right: 0px; bottom: 0px; height: 20px;">
   You can place some title here
   </div>
@@ -123,7 +124,7 @@ Your `my.component.ts` would look like this
     import { GalleryImage } from 'xgallerify';
     export class AppComponent {
         public clickImage(image: Image){
-            alert(image.src);
+            alert(image.url);
         }
     }
 ```
@@ -134,7 +135,7 @@ and your `my.component.html` like this
 <ui-xGallerify [images]="images" [imageTemplate]="imageTemplate" #myGallery></ui-xGallerify>
 
 <ng-template #imageTemplate let-image="image">
-  <img class="xgallerify-img" src="{{image.src}}" (load)="myGallery.imageLoaded($event, image)" (click)="clickImage(image)">
+  <img class="xgallerify-img" url="{{image.url}}" (load)="myGallery.imageLoaded($event, image)" (click)="clickImage(image)">
 </ng-template>
 ```
 
