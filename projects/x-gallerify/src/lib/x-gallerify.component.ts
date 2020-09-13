@@ -30,7 +30,6 @@ export class XGallerifyComponent implements OnInit {
   getCurrentGrid():any{
     let width = window.innerWidth;
     for (let i = 0; i < this.breakPoints.length; i++) {
-      console.log(this.breakPoints[i].min)
       if(this.breakPoints[i].min < width && this.breakPoints[i].max >= width){
         return this.breakPoints[i];
       }
@@ -40,7 +39,6 @@ export class XGallerifyComponent implements OnInit {
   @HostListener('window:resize', ['$event'])
   onResize(event){
     if(this.getCurrentGrid().rows != this.currentGrid.rows){
-      console.log("we got a change")
       this.updateRows();
     }
   }

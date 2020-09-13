@@ -1,8 +1,7 @@
 <div *ngFor="let row of rows">
   <div class="img-group">
     <div *ngFor="let image of row" [style.flex]="row.length == 1 ? 1 : image.ratio" [style.visibility]="!image.ratio ? 'hidden' : 'visible'" style="position:relative;">
-      <ng-container *ngTemplateOutlet="imageTemplate || defaultImageTemplate; context:{image: image}">
-      </ng-container>
+      <ng-container *ngTemplateOutlet="imageTemplate || defaultImageTemplate; context:{image: image}"></ng-container>
     </div>
   </div>
 </div>
@@ -10,3 +9,4 @@
 <ng-template #defaultImageTemplate let-image="image">
   <img class="xgallerify-img" src="{{image.url}}" (load)="imageLoaded($event, image)">
 </ng-template>
+<!-- TODO show loading indicator, when one of the images is not loaded / error -->

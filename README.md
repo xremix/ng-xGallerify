@@ -27,6 +27,7 @@ Here is a list of features you will see in the future. If you have any suggestio
 - [ ] Get image loaded events out of the templates
 - [ ] Have default themes, next to the plain one
 - [ ] Pageing
+- [ ] Loading Indicator
 
 ## Demo
 
@@ -135,7 +136,7 @@ and your `my.component.html` like this
 <ui-xGallerify [images]="images" [imageTemplate]="imageTemplate" #myGallery></ui-xGallerify>
 
 <ng-template #imageTemplate let-image="image">
-  <img class="xgallerify-img" url="{{image.url}}" (load)="myGallery.imageLoaded($event, image)" (click)="clickImage(image)">
+  <img class="xgallerify-img" src="{{image.url}}" (load)="myGallery.imageLoaded($event, image)" (click)="clickImage(image)">
 </ng-template>
 ```
 
