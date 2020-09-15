@@ -28,6 +28,7 @@ Here is a list of features you will see in the future. If you have any suggestio
 - [ ] Have default themes, next to the plain one
 - [ ] Pageing
 - [ ] Loading Indicator
+- [ ] Last row fix (for example to a max of 1/3 of screen height)
 
 ## Demo
 

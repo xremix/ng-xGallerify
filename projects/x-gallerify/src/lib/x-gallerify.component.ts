@@ -57,7 +57,7 @@ export class XGallerifyComponent implements OnInit {
   }
 
   public imageLoaded(event: any, image: GalleryImage) {
-    var htmlImageElement = event.path[0];
+    var htmlImageElement = event.target;
     image.width = htmlImageElement.width;
     image.height = htmlImageElement.height;
     image.ratio = image.width / image.height;
