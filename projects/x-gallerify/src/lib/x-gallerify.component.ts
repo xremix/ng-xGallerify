@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, TemplateRef, HostListener } from '@angular/core';
+import { Component, OnInit, OnChanges, Input, TemplateRef, HostListener } from '@angular/core';
 import { GalleryImage } from './models/gallery-image';
 import { BreakPoint } from './models/breakpoint';
 import { GridService } from './services/grid.service';
@@ -8,7 +8,7 @@ import { GridService } from './services/grid.service';
   templateUrl: './x-gallerify.component.html',
   styleUrls: ['./x-gallerify.component.scss']
 })
-export class XGallerifyComponent implements OnInit {
+export class XGallerifyComponent implements OnInit, OnChanges {
   // Input Parameter
   @Input() public images: Array<GalleryImage> = [];
   @Input() public imageTemplate: TemplateRef<GalleryImage>;
@@ -19,6 +19,11 @@ export class XGallerifyComponent implements OnInit {
   private currentGrid = null;
 
   ngOnInit(): void {
+    this.updateRows();
+  }
+
+  // Triggers if any @Input() get's changed
+  ngOnChanges(changes: any) {
     this.updateRows();
   }
 
