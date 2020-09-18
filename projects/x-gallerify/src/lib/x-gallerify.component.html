@@ -15,4 +15,3 @@
 <ng-template #defaultImageTemplate let-image="image">
   <img class="xgallerify-img" src="{{image.url}}" (load)="imageLoaded($event, image)">
 </ng-template>
-<!-- TODO show loading indicator, when one of the images is not loaded / error -->

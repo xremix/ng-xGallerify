@@ -16,7 +16,7 @@ export class XGallerifyComponent implements OnInit, OnChanges {
 
   // Internal Parameter
   public rows: Array<Array<GalleryImage>> = [];
-  private currentGrid = null;
+  public currentGrid = null;
 
   ngOnInit(): void {
     this.updateRows();
