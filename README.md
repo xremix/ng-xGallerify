@@ -1,12 +1,10 @@
 # ng-xGallerify
 
-**WARNING, the current NPM is not working - currently this needs to get cloned**
-
 **A lightweight, responsive, amazing looking photo gallery for [Angular](https://angular.io/).**
 
 The row based design is very appealing, as it highlights landscape photos and allows it to show a beautiful image grid with no waste of space.
 
-- Responsive *wip*
+- Responsive
 - Simple to use
 - Lightweight
 - Customizable
@@ -20,6 +18,7 @@ The row based design is very appealing, as it highlights landscape photos and al
 
 Here is a list of features you will see in the future. If you have any suggestions, please open up an issue.
 
+- [x] Deploy working component to NPM
 - [x] Support modes for different row sizes based on the screen size
 - [x] Have a bootstrap mode
 - [x] Have option to pass in own modes
@@ -27,8 +26,8 @@ Here is a list of features you will see in the future. If you have any suggestio
 - [ ] Get image loaded events out of the templates
 - [ ] Have default themes, next to the plain one
 - [ ] Pageing
-- [ ] Loading Indicator
-- [ ] Last row fix (for example to a max of 1/3 of screen height)
+- [ ] Have optional Template for Loading Indicator
+- [x] Fix how last rows show if they are not full
 
 ## Demo
 
@@ -41,17 +40,14 @@ First run `npm i 'ng-xGallerify'` to install the dependency in your project
 Next make the following adjustments to your app.modules.ts
 
 ```
-
-import { XGallerifyComponent } from 'x-gallerify'
+import { XGallerifyModule } from '@xremix/ng-x-gallerify'
 ...
 
-
 @NgModule({
-  declarations: [
-    AppComponent,
-    XGallerifyComponent
+  imports: [
+    XGallerifyModule
+  ]
   ...
-
 ```
 
 Then in your `my.component.ts` you should have some code like this:
@@ -141,7 +137,7 @@ and your `my.component.html` like this
 </ng-template>
 ```
 
-## Parameters
+### Parameters
 
 *This is still work in progress*
 
@@ -151,6 +147,15 @@ You can pass the following parameter to a gallery:
 - images
 - imageTemplate
 
+## Deploy
+
+Do the following steps to release a new version of this package.
+
+- Increase version in `package.json` and `projects/x-gallerify/package.json`
+- `npm run pack` to build the package
+- Make sure you are logged in at npm
+- `cd dist/x-gallerify`
+- `npm publish` to publish it on npm
 
 ## Community
 

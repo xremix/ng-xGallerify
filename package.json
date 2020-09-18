@@ -1,6 +1,6 @@
 {
   "name": "@xremix/ng-x-gallerify",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -8,7 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "pack": "cd dist/x-gallerify && npm pack",
+    "packold": "cd dist/x-gallerify && npm pack",
+    "pack": "ng-packagr -p projects/x-gallerify/ng-package.json",
     "publish": "cd dist/x-gallerify && npm publish"
   },
   "private": true,
