@@ -12,19 +12,19 @@ export class GridService {
     return [{
       min: 0,
       max: 768,
-      rows: 1
+      columns: 1
     }, {
       min: 768,
       max: 1200,
-      rows: 2
+      columns: 2
     }, {
       min: 1200,
       max: 1800,
-      rows: 3
+      columns: 3
     }, {
       min: 1800,
       max: 999999,
-      rows: 4
+      columns: 4
     }];
   }
 
@@ -32,19 +32,19 @@ export class GridService {
     return [{
       min: 0,
       max: 768,
-      rows: 1
+      columns: 1
     }, {
       min: 768,
       max: 992,
-      rows: 2
+      columns: 2
     }, {
       min: 992,
       max: 1200,
-      rows: 3
+      columns: 3
     }, {
       min: 1200,
       max: 999999,
-      rows: 4
+      columns: 4
     }];
   }
 
@@ -52,19 +52,19 @@ export class GridService {
     return [{
       min: 0,
       max: 610,
-      rows: 1
+      columns: 1
     }, {
       min: 610,
       max: 1300,
-      rows: 2
+      columns: 2
     }, {
       min: 1300,
       max: 1800,
-      rows: 3
+      columns: 3
     }, {
       min: 1800,
       max: 999999,
-      rows: 4
+      columns: 4
     }];
   }
 
@@ -72,19 +72,19 @@ export class GridService {
     return [{
       min: 0,
       max: 610,
-      rows: 4
+      columns: 4
     }, {
       min: 610,
       max: 1300,
-      rows: 6
+      columns: 6
     }, {
       min: 1300,
       max: 1800,
-      rows: 10
+      columns: 10
     }, {
       min: 1800,
       max: 999999,
-      rows: 14
+      columns: 14
     }];
   }
 }

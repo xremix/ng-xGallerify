@@ -29,7 +29,7 @@ export class XGallerifyComponent implements OnInit, OnChanges {
 
   updateRows(){
     this.currentGrid = this.getCurrentGrid();
-    this.rows = this.chunkArray(this.images, this.currentGrid.rows);
+    this.rows = this.chunkArray(this.images, this.currentGrid.columns);
   }
 
   getCurrentGrid():any{
@@ -43,7 +43,7 @@ export class XGallerifyComponent implements OnInit, OnChanges {
 
   @HostListener('window:resize', ['$event'])
   onResize(event){
-    if(this.getCurrentGrid().rows != this.currentGrid.rows){
+    if(this.getCurrentGrid().columns != this.currentGrid.columns){
       this.updateRows();
     }
   }
