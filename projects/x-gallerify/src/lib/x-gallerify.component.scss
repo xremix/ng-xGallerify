@@ -3,11 +3,12 @@ img{
   height:auto;
 }
 .img-group{
-  display:flex; 
-  // font-size: 0px;
+  display:flex;
+  justify-content: center;
 }
 
 // Public styles for usage outside of the model
+// TODO figure out other solution than ng-deep, as it's deprecated
 ::ng-deep{
   .xgallerify-img{
     width:100%;
