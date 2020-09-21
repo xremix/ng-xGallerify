@@ -158,6 +158,7 @@ Do the following steps to release a new version of this package.
 - `cd dist/x-gallerify`
 - `npm publish` to publish it on npm
 - Tag commit with `git tag -a v1.4 -m "version 1.4"`
+- `git push origin v1.4`
 
 
 ## Community
