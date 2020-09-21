@@ -22,6 +22,7 @@ Here is a list of features you will see in the future. If you have any suggestio
 - [x] Support modes for different row sizes based on the screen size
 - [x] Have a bootstrap mode
 - [x] Have option to pass in own modes
+- [x] Exporting models
 - [ ] Improve default styling
 - [ ] Get image loaded events out of the templates
 - [ ] Have default themes, next to the plain one
@@ -156,6 +157,8 @@ Do the following steps to release a new version of this package.
 - Make sure you are logged in at npm
 - `cd dist/x-gallerify`
 - `npm publish` to publish it on npm
+- Tag commit with `git tag -a v1.4 -m "version 1.4"`
+
 
 ## Community
 
