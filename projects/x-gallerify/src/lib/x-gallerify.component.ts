@@ -1,4 +1,5 @@
-import { Component, OnInit, OnChanges, Input, TemplateRef, HostListener } from '@angular/core';
+import { Component, OnInit, OnChanges, Input, TemplateRef, HostListener, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { GalleryImage } from './models/gallery-image';
 import { BreakPoint } from './models/breakpoint';
 import { GridService } from './services/grid.service';
@@ -18,6 +19,8 @@ export class XGallerifyComponent implements OnInit, OnChanges {
   public rows: Array<Array<GalleryImage>> = [];
   public currentGrid = null;
 
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) { }
+
   ngOnInit(): void {
     this.updateRows();
   }
@@ -33,17 +36,22 @@ export class XGallerifyComponent implements OnInit, OnChanges {
   }
 
   getCurrentGrid():any{
-    let width = window.innerWidth;
-    for (let i = 0; i < this.breakPoints.length; i++) {
-      if(this.breakPoints[i].min < width && this.breakPoints[i].max >= width){
-        return this.breakPoints[i];
+    if(isPlatformBrowser(this.platformId)) {
+      let width = window.innerWidth;
+      for (let i = 0; i < this.breakPoints.length; i++) {
+        if(this.breakPoints[i].min < width && this.breakPoints[i].max >= width){
+          return this.breakPoints[i];
+        }
       }
+    } else {
+      console.warn('xGallerify is not running in a browser');
+      return GridService.singleRowGrid()[0];
     }
   }
 
   @HostListener('window:resize', ['$event'])
   onResize(event){
-    if(this.getCurrentGrid().columns != this.currentGrid.columns){
+    if(this.getCurrentGrid().columns != this.currentGrid.columns) {
       this.updateRows();
     }
   }
