@@ -8,6 +8,14 @@ export class GridService {
 
   constructor() { }
 
+  public static singleRowGrid(): Array<BreakPoint> {
+    return [{
+      min: 0,
+      max: 999999,
+      columns: 1
+    }];
+  }
+
   public static defaultGrid(): Array<BreakPoint> {
     return [{
       min: 0,
